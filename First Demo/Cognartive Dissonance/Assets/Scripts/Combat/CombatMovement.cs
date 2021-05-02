@@ -5,7 +5,7 @@ using UnityEngine;
 public class CombatMovement : MonoBehaviour
 {
     [SerializeField]
-    private int Speed;
+    private float Speed;
     private Rigidbody2D body;
     private float rotation = 0;
 

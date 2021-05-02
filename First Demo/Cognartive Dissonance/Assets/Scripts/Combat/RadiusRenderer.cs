@@ -6,7 +6,7 @@ public class RadiusRenderer : MonoBehaviour
 {
     [SerializeField]
     private int numberOfSpheres = 0;
-
+    private Vector3 origin;
 
     private Color[] colors = { Color.yellow, Color.black, Color.green, Color.red, Color.magenta };
 
@@ -25,7 +25,7 @@ public class RadiusRenderer : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        
+        origin = new Vector2(0,0);
 
         int colorIndex = 0;
         for (int i = 0; i < numberOfSpheres; i++)
@@ -36,7 +36,7 @@ public class RadiusRenderer : MonoBehaviour
             {
                 colorIndex = 0;
             }
-            Gizmos.DrawWireSphere(transform.position, 7 + i);
+            Gizmos.DrawWireSphere(origin, 7 + i);
         }
     }
 }

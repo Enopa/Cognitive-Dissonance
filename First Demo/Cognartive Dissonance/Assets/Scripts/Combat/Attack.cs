@@ -5,10 +5,12 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     [SerializeField]
-    private int speed;
+    private float speed;
     private Rigidbody2D body;
-    [SerializeField]
     private GameObject player;
+
+    [SerializeField]
+    private GameObject particles;
 
     private Vector2 move;
     // Start is called before the first frame update
@@ -21,15 +23,15 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        body.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, .1f));
+        body.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, .1f) * speed);
     }
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
             Destroy(gameObject);
+            particles.transform.parent = null;
+            Instantiate(particles, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
         }
     }
 }
