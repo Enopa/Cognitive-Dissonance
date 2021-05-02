@@ -23,7 +23,7 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        body.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, .1f) * speed);
+        body.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, .1f * speed));
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
