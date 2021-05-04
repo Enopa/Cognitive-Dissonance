@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Combat\CombatMovement.cs" />
     <Compile Include="Assets\Scripts\Combat\RadiusRenderer.cs" />
+    <Compile Include="Assets\Scripts\Combat\DamageHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
