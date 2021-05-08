@@ -568,6 +568,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &854181025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 854181026}
+  - component: {fileID: 854181027}
+  m_Layer: 0
+  m_Name: DaCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &854181026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854181025}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.7, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1344955070}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &854181027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854181025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8c42f0ef9920a439b6d0ab8c9864a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Detected: 0
+  WhatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  DetectionRange: 1
+  ObjectsInArea: {fileID: 0}
+  Offset: {x: 0.55, y: 0}
 --- !u!1 &1245000686
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 7
   checkDistance: 1
+  Detect: {fileID: 854181027}
 --- !u!50 &1344955067
 Rigidbody2D:
   serializedVersion: 4
@@ -819,7 +870,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.6, y: -0.21, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 854181026}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -943,7 +995,7 @@ GameObject:
   - component: {fileID: 2122730177}
   - component: {fileID: 2122730176}
   - component: {fileID: 2122730175}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

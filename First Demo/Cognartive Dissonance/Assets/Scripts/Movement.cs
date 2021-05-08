@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Movement : MonoBehaviour
     Vector2 Mover;
     [SerializeField]
     private float checkDistance;
+    [SerializeField] Detection Detect;
 
     void Start()
     {
@@ -28,12 +30,17 @@ public class Movement : MonoBehaviour
         transform.right = (new Vector3(lookPoint.x, lookPoint.y, 0f)) - transform.position;
 
         //Raycast to check for enemy in front
-        Vector2 rayStart = new Vector2(transform.position.x + GetComponent<BoxCollider2D>().bounds.extents.x + 0.1f, transform.position.y);
-        RaycastHit2D objectCheck = Physics2D.Raycast(rayStart, transform.right, checkDistance);
-        Debug.DrawRay(rayStart, transform.right, Color.yellow, 2f);
-        if (objectCheck.collider != null)
+        Detect.DetectionRange = checkDistance;
+
+        if (Detect.Detected)
         {
-            print(objectCheck.collider.tag);
+            if(Detect.ObjectsInArea.tag == "Enemy")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    SceneManager.LoadScene("CombatSim");
+                }
+            }
         }
     }
 }
