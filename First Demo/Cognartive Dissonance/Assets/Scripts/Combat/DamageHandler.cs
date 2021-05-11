@@ -10,7 +10,7 @@ public class DamageHandler : MonoBehaviour
     private GameObject slider;
     private float timer = 0;
 
-    public bool Invis;
+    public bool Invincible;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +45,7 @@ public class DamageHandler : MonoBehaviour
         if (collision.tag == "Attack")
         {
             //If the brain is set to invis it won't take damage
-            if (Invis) return;
+            if (Invincible) return;
 
             health.value -= 34;
             Destroy(collision.gameObject);

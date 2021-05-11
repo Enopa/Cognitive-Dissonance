@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject Proj;
+
+    [SerializeField] private float speed;
+    [SerializeField]private GameObject[] ProjCollection;
+    private GameObject Proj;
     public float Radius;
     public float Rate;
     float NextRate;
@@ -17,10 +20,16 @@ public class Spawner : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {    
         if (Time.time >= NextRate)
         {
             Vector2 Pos = GenNewPos(Random.Range(-Radius, Radius), Radius);
+            int i = Random.Range(0, 2);
+            float angle = Random.Range(0, 10);
+
+            Proj = ProjCollection[i];
+
+            Proj.GetComponent<Attack>().setSpeed(speed);
             Instantiate(Proj, Pos, Quaternion.identity);
             NextRate = Time.time + 1f / Rate;
         }

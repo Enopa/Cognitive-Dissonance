@@ -291,7 +291,7 @@ RectTransform:
   m_Children:
   - {fileID: 1517041963}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -362,7 +362,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705059692
 GameObject:
@@ -530,7 +530,7 @@ Transform:
   m_LocalScale: {x: 0.1995266, y: 0.1995266, z: 0.1995266}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1336842306
 BoxCollider2D:
@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea9f6384c0044fe4489a4fee6efe563c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Invis: 1
+  Invincible: 1
 --- !u!114 &1336842308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,9 +583,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4782c822950c7479ebe993880b3ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Proj: {fileID: 6595282418207936829, guid: 9cacf0c7a5d6d664e90983eeaa27f860, type: 3}
+  speed: 1
+  ProjCollection:
+  - {fileID: 6595282418207936829, guid: 9cacf0c7a5d6d664e90983eeaa27f860, type: 3}
+  - {fileID: 1392701352916974604, guid: eccb42239b2b17c4fa779e14d2f243ed, type: 3}
   Radius: 10
-  Rate: 3
+  Rate: 1
 --- !u!1 &1454742192
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,36 +951,6 @@ TrailRenderer:
   m_MinVertexDistance: 0
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!1 &1775576288
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1775576289}
-  m_Layer: 0
-  m_Name: Attacks
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1775576289
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775576288}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1980217383
 GameObject:
   m_ObjectHideFlags: 0
