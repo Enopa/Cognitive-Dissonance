@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/turn_queue/turn_queue.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/battle_characters/battle_player/battle_player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/level_transition.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/battle_arena/battle_character_spawner/battle_character_spawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/backgrounds/battle_arena/battle_arena_background.png" type="Texture" id=5]
+[ext_resource path="res://scenes/battle_system/battle_system_ui/battle_system_ui.tscn" type="PackedScene" id=6]
+[ext_resource path="res://levels/battle_arena/battle_arena.gd" type="Script" id=7]
+[ext_resource path="res://scenes/battle_system/battle_system_hud/battle_system_hud.tscn" type="PackedScene" id=8]
+[ext_resource path="res://effects/screenshake/screenshake.tscn" type="PackedScene" id=9]
+[ext_resource path="res://levels/battle_arena/battle_camera.gd" type="Script" id=10]
+[ext_resource path="res://levels/battle_arena/battle_bullet_spawner/battle_bullet_spawner.tscn" type="PackedScene" id=11]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="TurnQueue" parent="." instance=ExtResource( 1 )]
+
+[node name="BattlePlayer" parent="TurnQueue" instance=ExtResource( 2 )]
+
+[node name="BattleCharacterSpawner" parent="TurnQueue" instance=ExtResource( 4 )]
+position = Vector2( 0, -64 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 10 )
+
+[node name="LevelTransition" parent="Camera2D" instance=ExtResource( 3 )]
+position = Vector2( -160, -120 )
+
+[node name="Screenshake" parent="Camera2D" instance=ExtResource( 9 )]
+
+[node name="Background" type="Sprite" parent="."]
+z_index = -100
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 640, 380 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BattleSystemUI" parent="." instance=ExtResource( 6 )]
+position = Vector2( -160, -120 )
+
+[node name="BattleSystemHud" parent="." instance=ExtResource( 8 )]
+position = Vector2( -160, -120 )
+
+[node name="BattleBulletSpawnerLeft" parent="." instance=ExtResource( 11 )]
+position = Vector2( -160, 0 )
+direction = "Left"
+
+[node name="BattleBulletSpawnerUp" parent="." instance=ExtResource( 11 )]
+position = Vector2( 0, -160 )
+direction = "Up"
+
+[node name="BattleBulletSpawnerRight" parent="." instance=ExtResource( 11 )]
+position = Vector2( 160, 0 )
+direction = "Right"
+
+[node name="BattleBulletSpawnerDown" parent="." instance=ExtResource( 11 )]
+position = Vector2( 0, 160 )
+direction = "Down"

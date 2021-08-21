@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/battle_start.wav-2405d229921925c2ef53ed63d23856c8.sample"
+
+[deps]
+
+source_file="res://scenes/battle_transition_manager/battle_start.wav"
+dest_files=[ "res://.import/battle_start.wav-2405d229921925c2ef53ed63d23856c8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

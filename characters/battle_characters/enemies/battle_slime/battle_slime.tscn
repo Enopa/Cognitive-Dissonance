@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://characters/battle_characters/battle_enemy/battle_enemy_base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/battle_characters/enemies/battle_slime/sprites/battle_slime.png" type="Texture" id=2]
+[ext_resource path="res://characters/battle_characters/enemies/battle_slime/battle_slime.gd" type="Script" id=3]
+
+[node name="BattleCharacter" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PoolVector2Array( -14, -12, 14, -12, 14, 12, -14, 12 )

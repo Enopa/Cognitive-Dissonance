@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://environment/props/prop_base.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12, 28 )
+
+[node name="Bed" instance=ExtResource( 1 )]
+dialog_id = "AverysBedDialog"
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0, 0 )
+shape = SubResource( 1 )

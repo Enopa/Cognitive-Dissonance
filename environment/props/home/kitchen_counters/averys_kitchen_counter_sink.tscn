@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://environment/props/prop_base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://environment/props/home/kitchen_counters/sprites/kitchen_counter_middle_sink.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 4 )
+
+[node name="AverysKitchenCounterSink" instance=ExtResource( 1 )]
+dialog_id = "AverysKitchenCounterDialog"
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0, 4 )
+shape = SubResource( 1 )

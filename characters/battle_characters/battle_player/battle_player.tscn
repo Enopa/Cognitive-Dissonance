@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://characters/battle_characters/battle_character_base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/battle_characters/battle_player/sprites/player_brain.png" type="Texture" id=2]
+[ext_resource path="res://characters/battle_characters/battle_player/battle_player.gd" type="Script" id=3]
+[ext_resource path="res://characters/battle_characters/battle_player/sounds/attack_sound.wav" type="AudioStream" id=4]
+[ext_resource path="res://characters/battle_characters/battle_player/sounds/hit_note_sound.wav" type="AudioStream" id=5]
+[ext_resource path="res://characters/battle_characters/battle_player/sounds/damage_sound.wav" type="AudioStream" id=7]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/player_arrow.png-380a632d8901971f54fd67fa73d528f6.stex"
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 19.0263
+
+[node name="BattlePlayer" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PoolVector2Array( -20, -15, 20, -15, 20, 15, -20, 15 )
+
+[node name="AttackAudioPlayer" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource( 4 )
+
+[node name="DamageAudioPlayer" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource( 7 )
+
+[node name="HitNotePlayer" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource( 5 )
+volume_db = -5.0
+
+[node name="HurtboxArea" type="Area2D" parent="." index="5"]
+
+[node name="Hurtbox" type="CollisionPolygon2D" parent="HurtboxArea" index="0"]
+polygon = PoolVector2Array( -7, -15, 4, -15, 10, -13, 16, -10, 19, -7, 20, -5, 20, 4, 19, 8, 16, 12, 12, 14, 9, 15, 2, 15, -1, 14, -12, 14, -17, 12, -19, 9, -20, 7, -20, 2, -19, -1, -18, -7, -17, -9, -14, -12, -10, -14 )
+
+[node name="ArrowAreaUp" type="Area2D" parent="." index="6"]
+position = Vector2( 0, -24 )
+
+[node name="Sprite" type="Sprite" parent="ArrowAreaUp" index="0"]
+texture = SubResource( 1 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowAreaUp" index="1"]
+shape = SubResource( 2 )
+
+[node name="ArrowAreaDown" type="Area2D" parent="." index="7"]
+position = Vector2( 0, 24 )
+rotation = 3.14159
+
+[node name="Sprite" type="Sprite" parent="ArrowAreaDown" index="0"]
+texture = SubResource( 1 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowAreaDown" index="1"]
+shape = SubResource( 2 )
+
+[node name="ArrowAreaLeft" type="Area2D" parent="." index="8"]
+position = Vector2( -29, 0 )
+rotation = -1.5708
+
+[node name="Sprite" type="Sprite" parent="ArrowAreaLeft" index="0"]
+texture = SubResource( 1 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowAreaLeft" index="1"]
+shape = SubResource( 2 )
+
+[node name="ArrowAreaRight" type="Area2D" parent="." index="9"]
+position = Vector2( 29, 0 )
+rotation = 1.5708
+
+[node name="Sprite" type="Sprite" parent="ArrowAreaRight" index="0"]
+position = Vector2( 1.19209e-07, 0 )
+texture = SubResource( 1 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowAreaRight" index="1"]
+shape = SubResource( 2 )

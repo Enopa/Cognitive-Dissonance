@@ -1,0 +1,29 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1628856576.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1628856576.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It's our toilet. I don't need to go right now."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1629133648.json",
+		"name": "AverysToiletDialog"
+	}
+}

@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/DTM-Mono.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/battle_system/battle_system_hud/battle_system_hud.gd" type="Script" id=2]
+
+[node name="BattleSystemHud" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="PlayerHP" type="RichTextLabel" parent="."]
+margin_left = 8.0
+margin_top = 24.0
+margin_right = 72.0
+margin_bottom = 40.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Player HP:"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyHP" type="RichTextLabel" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 24.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Enemy HP:"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerHPValue" type="RichTextLabel" parent="."]
+margin_left = 72.0
+margin_top = 24.0
+margin_right = 128.0
+margin_bottom = 40.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "20
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyHPValue" type="RichTextLabel" parent="."]
+margin_left = 72.0
+margin_top = 8.0
+margin_right = 128.0
+margin_bottom = 24.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "20
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
