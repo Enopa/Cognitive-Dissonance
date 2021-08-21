@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://characters/battle_characters/battle_character_base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/battle_characters/battle_enemy/battle_enemy.gd" type="Script" id=2]
+
+[node name="BattleCharacter" instance=ExtResource( 1 )]
+script = ExtResource( 2 )

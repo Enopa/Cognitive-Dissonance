@@ -1,0 +1,20 @@
+{
+	"color": "#ff004b96",
+	"description": "The protagonist.",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1628856576.json",
+	"mirror_portraits": false,
+	"name": "Avery",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 345,
+	"offset_y": -80,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://characters/overworld_characters/player/sprites/avery_portrait.png"
+		}
+	],
+	"scale": 150
+}

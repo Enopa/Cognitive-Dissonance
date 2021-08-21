@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/damage_sound.wav-c13cd3a24b4dfa014effb1d5ef7e195e.sample"
+
+[deps]
+
+source_file="res://characters/battle_characters/battle_player/sounds/damage_sound.wav"
+dest_files=[ "res://.import/damage_sound.wav-c13cd3a24b4dfa014effb1d5ef7e195e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

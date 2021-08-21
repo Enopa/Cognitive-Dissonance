@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/DTM-Mono_Large.tres" type="DynamicFont" id=1]
+[ext_resource path="res://environment/backgrounds/battle_arena/battle_arena_background.png" type="Texture" id=2]
+[ext_resource path="res://levels/level_transition.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/win_level/win_level.gd" type="Script" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="LevelTransition" parent="Camera2D" instance=ExtResource( 3 )]
+position = Vector2( -160, -120 )
+
+[node name="Background" type="Sprite" parent="."]
+z_index = -100
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 640, 380 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -50.0
+margin_top = -27.0
+margin_right = 50.0
+margin_bottom = -11.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Enemy Slain"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = -126.0
+margin_top = -11.0
+margin_right = 126.0
+margin_bottom = 29.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Press ENTER or Z to continue"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
