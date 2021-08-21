@@ -21,3 +21,4 @@ func _physics_process(delta):
 			pending_door_repos = false
 			Global.player.position = door.exit_location.global_position
 			Global.player.loading_new_scene = false
+			Global.on_scene_loaded()
