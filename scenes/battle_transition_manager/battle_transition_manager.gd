@@ -11,6 +11,7 @@ var current_battle_id = String("")
 
 signal finished_battle
 
+
 func enter_battle(enemy_path, battle_id):
 	player_pos = Global.player.position
 	current_battle_id = battle_id

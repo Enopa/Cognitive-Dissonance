@@ -13,6 +13,7 @@ var max_speed = float(75)
 # Player State Variables
 var interact_array = []
 var talking = bool(false)
+var in_cutscene = bool(false)
 var loading_new_scene = bool(false)
 var found_interactable = false
 
@@ -30,6 +31,7 @@ onready var interaction_area = $InteractionArea
 func _ready():
 	animation_tree.active = true
 	Global.player = self
+	animation_tree.set("parameters/Idle/blend_position", Vector2(0, 1))
 
 
 # Func Physics Process
@@ -39,7 +41,6 @@ func _physics_process(delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("WalkRight") - Input.get_action_strength("WalkLeft")
 	input_vector.y = Input.get_action_strength("WalkDown") - Input.get_action_strength("WalkUp")
-	#input_vector = input_vector.normalized()
 
 	if input_vector != Vector2.ZERO and can_move():
 		velocity = velocity.move_toward(input_vector * max_speed, acceleration * delta * target_fps)
@@ -79,11 +80,20 @@ func talk():
 func stop_talking():
 	talking = false
 
+# Enter Cutscene
+func enter_cutscene():
+	in_cutscene = true
+	velocity.x = 0
+
+# Stop Talking
+func exit_cutscene():
+	in_cutscene = false
+
 # Can Move
 func can_move():
-	return(talking == false and loading_new_scene == false)
+	return(talking == false and loading_new_scene == false and in_cutscene == false)
 
 # Can Interact
 func can_interact():
-	return(talking == false and loading_new_scene == false)
+	return(talking == false and loading_new_scene == false and in_cutscene == false)
  

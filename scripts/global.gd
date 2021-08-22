@@ -10,13 +10,15 @@ var player
 
 signal loaded_scene
 
+
 func save_data():
 
 	# Set Save Data
 	var save_data_dictionary = {
 	"room_path": get_tree().current_scene.filename,
 	"player_position": player.position,
-	"completed_battle_ids": BattleCompletionManager.completed_battle_ids,
+	"completed_battle_ids": CompletionManager.completed_battle_ids,
+	"completed_cutscene_ids": CompletionManager.completed_cutscene_ids
 	}
 
 	# Create Save Directory
@@ -42,12 +44,16 @@ func load_data():
 
 			# Apply Loaded Data
 			loaded_data = data
-			get_tree().change_scene(data.room_path)
+			get_tree().change_scene(loaded_data.room_path)
+			apply_loaded_data_to_singletons()
 			load_pending = true
+
+func apply_loaded_data_to_singletons():
+	CompletionManager.completed_battle_ids = loaded_data.completed_battle_ids
+	CompletionManager.completed_cutscene_ids = loaded_data.completed_cutscene_ids
 
 func apply_loaded_data():
 	player.position = loaded_data.player_position
-	BattleCompletionManager.completed_battle_ids = loaded_data.completed_battle_ids
 	emit_signal("loaded_scene")
 
 func _process(delta):
