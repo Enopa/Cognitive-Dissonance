@@ -2,7 +2,6 @@ extends Node
 
 
 var pending_door_repos = bool(false)
-var exit_door_name
 var exit_door
 
 
@@ -20,5 +19,6 @@ func _physics_process(delta):
 		if door != null:
 			pending_door_repos = false
 			Global.player.position = door.exit_location.global_position
+			Global.player.set_facing_direction(door.facing_direction)
 			Global.player.loading_new_scene = false
 			Global.on_scene_loaded()

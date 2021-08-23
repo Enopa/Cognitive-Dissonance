@@ -1,17 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tilesets/grass/grass.png" type="Texture" id=1]
-[ext_resource path="res://triggers/battle_trigger/battle_trigger.tscn" type="PackedScene" id=2]
-[ext_resource path="res://characters/battle_characters/enemies/battle_slime/sprites/battle_slime.png" type="Texture" id=3]
+[ext_resource path="res://characters/overworld_characters/enemies/slime/slime_garden_cutscene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://triggers/level_transitions/doors/door_base/door_base.tscn" type="PackedScene" id=4]
+[ext_resource path="res://levels/areas/averys_house/garden/garden.gd" type="Script" id=5]
 [ext_resource path="res://characters/overworld_characters/player/player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://tilesets/void/void_tileset.tres" type="TileSet" id=9]
 [ext_resource path="res://audio/level_audio_manager.tscn" type="PackedScene" id=10]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14, 8 )
-
-[sub_resource type="TileSet" id=2]
+[sub_resource type="TileSet" id=1]
 0/name = "grass.png 0"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
@@ -37,29 +34,18 @@ extents = Vector2( 14, 8 )
 0/z_index = 0
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 7 )]
 
-[node name="BattleTrigger" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( -28, -4 )
-scale = Vector2( -1, 1 )
-enemy_path = "res://characters/battle_characters/enemies/battle_slime/battle_slime.tscn"
-battle_id = "SlimeBattle"
-battle_finish_dialog = "GardenMonsterSlainDialog"
-
-[node name="Sprite" parent="YSort/BattleTrigger" index="0"]
-scale = Vector2( 1, 1 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" parent="YSort/BattleTrigger/Area2D" index="0"]
-position = Vector2( 0, 4 )
-shape = SubResource( 1 )
+[node name="SlimeGardenCutscene" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 0, -8 )
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
-tile_set = SubResource( 2 )
+tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -262146, 0, 11, -262145, 0, 13, -327680, 0, 13, -327679, 0, 14, -196612, 0, 11, -196611, 0, 13, -196610, 0, 65543, -196609, 0, 131084, -262144, 0, 131084, -262143, 0, 65544, -262142, 0, 13, -262141, 0, 14, -131076, 0, 65547, -131075, 0, 131084, -131074, 0, 131084, -131073, 0, 131084, -196608, 0, 131084, -196607, 0, 131084, -196606, 0, 131084, -196605, 0, 131086, -65541, 0, 11, -65540, 0, 65543, -65539, 0, 131084, -65538, 0, 131084, -65537, 0, 131084, -131072, 0, 131084, -131071, 0, 131084, -131070, 0, 131084, -131069, 0, 65544, -131068, 0, 8, -131067, 0, 262148, -5, 0, 65547, -4, 0, 131084, -3, 0, 131084, -2, 0, 131084, -1, 0, 131084, -65536, 0, 131084, -65535, 0, 131084, -65534, 0, 131084, -65533, 0, 131084, -65532, 0, 131086, 65531, 0, 65547, 65532, 0, 131084, 65533, 0, 131084, 65534, 0, 131084, 65535, 0, 131084, 0, 0, 131084, 1, 0, 131084, 2, 0, 131084, 3, 0, 131084, 4, 0, 131086, 131067, 0, 196619, 131068, 0, 131079, 131069, 0, 131084, 131070, 0, 131084, 131071, 0, 131084, 65536, 0, 131084, 65537, 0, 131084, 65538, 0, 131084, 65539, 0, 131080, 65540, 0, 196622, 196604, 0, 65547, 196605, 0, 131084, 196606, 0, 131084, 196607, 0, 131084, 131072, 0, 131084, 131073, 0, 131084, 131074, 0, 131084, 131075, 0, 131086, 262140, 0, 196619, 262141, 0, 196620, 262142, 0, 131079, 262143, 0, 131084, 196608, 0, 131084, 196609, 0, 131080, 196610, 0, 196620, 196611, 0, 196622, 327678, 0, 196619, 327679, 0, 196620, 262144, 0, 196620, 262145, 0, 196622 )
@@ -75,6 +61,7 @@ tile_data = PoolIntArray( -720912, 0, 0, -720911, 0, 0, -720910, 0, 0, -720909, 
 position = Vector2( 88, -24 )
 level_path = "res://levels/areas/averys_house/main_hall/main_hall.tscn"
 exit_door_name = "GardenDoor"
+facing_direction = Vector2( -1, 0 )
 
 [node name="ExitLocation" parent="MainHallDoor" index="1"]
 position = Vector2( -16, 0 )
@@ -82,5 +69,4 @@ position = Vector2( -16, 0 )
 [node name="LevelMusicManager" parent="." instance=ExtResource( 10 )]
 music_track_path = "res://audio/music/overworld/averys_house/home.wav"
 
-[editable path="YSort/BattleTrigger"]
 [editable path="MainHallDoor"]

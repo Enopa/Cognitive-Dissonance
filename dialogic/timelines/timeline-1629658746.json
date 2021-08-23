@@ -18,12 +18,22 @@
 			"character": "character-1628856576.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Holy shit, what was that [color=#A00000][shake rate=25 level=5]thing?[/shake][/color]\nWhatever it was, it's dead now.\nHuh? I think I just heard a knock at my front door."
+			"text": "What the hell is that thing?"
+		},
+		{
+			"emit_signal": "MonsterMoveTowardPlayer",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1628856576.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "OH SHIT IT'S COMING RIGHT AT ME!"
 		}
 	],
 	"metadata": {
 		"dialogic-version": "1.2.5",
-		"file": "timeline-1629544868.json",
-		"name": "GardenMonsterSlainDialog"
+		"file": "timeline-1629658746.json",
+		"name": "GardenIntroDialog"
 	}
 }

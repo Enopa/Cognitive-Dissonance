@@ -42,6 +42,7 @@ tile_data = PoolIntArray( -720912, 0, 0, -720911, 0, 0, -720910, 0, 0, -720909, 
 position = Vector2( 40, -40 )
 level_path = "res://levels/areas/averys_house/main_hall/main_hall.tscn"
 exit_door_name = "LivingRoomDoor"
+facing_direction = Vector2( 0, 1 )
 
 [node name="ExitLocation" parent="MainHallDoor" index="1"]
 position = Vector2( 0, 16 )

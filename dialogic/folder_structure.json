@@ -63,7 +63,7 @@
 							},
 							"metadata": {
 								"color": null,
-								"folded": false
+								"folded": true
 							}
 						},
 						"BathRoom": {
@@ -82,7 +82,8 @@
 						},
 						"Garden": {
 							"files": [
-								"timeline-1629544868.json"
+								"timeline-1629544868.json",
+								"timeline-1629658746.json"
 							],
 							"folders": {
 
@@ -129,7 +130,7 @@
 							},
 							"metadata": {
 								"color": null,
-								"folded": true
+								"folded": false
 							}
 						},
 						"OpeningLevel": {

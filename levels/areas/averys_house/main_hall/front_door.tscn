@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://triggers/level_transitions/doors/door_base/door_base.tscn" type="PackedScene" id=1]
+
+[node name="AverysStreetDoor" instance=ExtResource( 1 )]
+level_path = "res://levels/areas/averys_town/averys_street.tscn"
+exit_door_name = "MainHallDoor"
+
+[node name="ExitLocation" parent="." index="1"]
+position = Vector2( -16, 0 )

@@ -36,12 +36,12 @@ __meta__ = {
 }
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-margin_left = -126.0
-margin_top = -11.0
-margin_right = 126.0
-margin_bottom = 29.0
+margin_left = -76.0
+margin_top = -8.0
+margin_right = 90.0
+margin_bottom = 32.0
 custom_fonts/normal_font = ExtResource( 1 )
-text = "Press ENTER or Z to continue"
+text = "Press Z, ENTER or SPACE to continue"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false

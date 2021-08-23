@@ -2,12 +2,12 @@ extends "res://characters/battle_characters/battle_character_base.gd"
 
 
 # Fight Data
-var bullet_time = float(0.5)
-var bullet_count = float(8)
-var bullet_speed = float(1.5)
-var bullet_damage = int(2)
-var doubles_chance = float(0)
-var music_path = String("")
+export var bullet_time = float(1)
+export var bullet_count = float(4)
+export var bullet_speed = float(1.25)
+export var bullet_damage = int(2)
+export var doubles_chance = float(0)
+export var music_path = String("")
 
 var bullet_scene = preload("res://characters/battle_characters/battle_enemy/bullets/bullet.tscn")
 var bullets = Array()

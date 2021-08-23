@@ -1,47 +1,18 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://audio/level_audio_manager.tscn" type="PackedScene" id=1]
-[ext_resource path="res://environment/props/home/desk/averys_desk.tscn" type="PackedScene" id=2]
-[ext_resource path="res://environment/props/home/dresser/averys_dresser.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/areas/averys_town/averys_street.gd" type="Script" id=2]
 [ext_resource path="res://characters/overworld_characters/player/player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://environment/props/home/small_sofa/averys_small_sofa.tscn" type="PackedScene" id=5]
 [ext_resource path="res://triggers/level_transitions/doors/door_base/door_base.tscn" type="PackedScene" id=6]
-[ext_resource path="res://environment/props/home/drawer/averys_drawer.tscn" type="PackedScene" id=7]
-[ext_resource path="res://environment/props/home/bed/averys_bed.tscn" type="PackedScene" id=8]
-[ext_resource path="res://levels/areas/averys_house/averys_room/averys_room.gd" type="Script" id=9]
 [ext_resource path="res://tilesets/wooden_floor/wooden_floor_tileset.tres" type="TileSet" id=10]
 [ext_resource path="res://tilesets/void/void_tileset.tres" type="TileSet" id=11]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 9 )
+script = ExtResource( 2 )
 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 8, -32 )
-
-[node name="Bed" parent="YSort" groups=[
-"DetectInteract",
-] instance=ExtResource( 8 )]
-position = Vector2( 32, -32 )
-
-[node name="Drawer" parent="YSort" groups=[
-"DetectInteract",
-] instance=ExtResource( 7 )]
-position = Vector2( 8, -48 )
-
-[node name="Desk" parent="YSort" groups=[
-"DetectInteract",
-] instance=ExtResource( 2 )]
-position = Vector2( -24, -52 )
-
-[node name="Dresser" parent="YSort" groups=[
-"DetectInteract",
-] instance=ExtResource( 3 )]
-position = Vector2( -40, 0 )
-
-[node name="SmallSofa" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 40, 24 )
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
@@ -60,8 +31,7 @@ tile_data = PoolIntArray( -720912, 0, 0, -720911, 0, 0, -720910, 0, 0, -720909, 
 [node name="MainHallDoor" parent="." instance=ExtResource( 6 )]
 position = Vector2( -24, 56 )
 level_path = "res://levels/areas/averys_house/main_hall/main_hall.tscn"
-exit_door_name = "AverysDoor"
-facing_direction = Vector2( 0, -1 )
+exit_door_name = "AverysStreetDoor"
 
 [node name="ExitLocation" parent="MainHallDoor" index="1"]
 position = Vector2( 0, -16 )
