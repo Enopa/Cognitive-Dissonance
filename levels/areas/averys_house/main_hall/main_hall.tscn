@@ -82,14 +82,14 @@ facing_direction = Vector2( 1, 0 )
 [node name="ExitLocation" parent="GardenDoor" index="1"]
 position = Vector2( 16, 0 )
 
-[node name="AverysStreetDoor" parent="." instance=ExtResource( 4 )]
+[node name="AverysTownDoor" parent="." instance=ExtResource( 4 )]
 position = Vector2( 120, 24 )
-level_path = "res://levels/areas/averys_town/averys_street.tscn"
+level_path = "res://levels/areas/averys_town/averys_town.tscn"
 exit_door_name = "MainHallDoor"
 facing_direction = Vector2( -1, 0 )
 locked = true
 
-[node name="ExitLocation" parent="AverysStreetDoor" index="1"]
+[node name="ExitLocation" parent="AverysTownDoor" index="1"]
 position = Vector2( -16, 0 )
 
 [node name="LevelMusicManager" parent="." instance=ExtResource( 1 )]
@@ -108,4 +108,4 @@ dialog_id = "AverysStreetDoorLockedDialog"
 [editable path="LivingRoomDoor"]
 [editable path="KitchenDoor"]
 [editable path="GardenDoor"]
-[editable path="AverysStreetDoor"]
+[editable path="AverysTownDoor"]

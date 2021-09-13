@@ -5,7 +5,9 @@
 	"folders": {
 		"Characters": {
 			"files": [
-				"character-1628856576.json"
+				"character-1628856576.json",
+				"character-1630501051.json",
+				"character-1630501127.json"
 			],
 			"folders": {
 
@@ -130,7 +132,7 @@
 							},
 							"metadata": {
 								"color": null,
-								"folded": false
+								"folded": true
 							}
 						},
 						"OpeningLevel": {
@@ -142,7 +144,7 @@
 							},
 							"metadata": {
 								"color": null,
-								"folded": false
+								"folded": true
 							}
 						},
 						"ParentsRoom": {
@@ -159,6 +161,23 @@
 								"folded": true
 							}
 						}
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				},
+				"AverysTown": {
+					"files": [
+						"timeline-1630060442.json",
+						"timeline-1630092586.json",
+						"timeline-1630501006.json",
+						"timeline-1630515626.json",
+						"timeline-1630857451.json",
+						"timeline-1631286056.json"
+					],
+					"folders": {
+
 					},
 					"metadata": {
 						"color": null,

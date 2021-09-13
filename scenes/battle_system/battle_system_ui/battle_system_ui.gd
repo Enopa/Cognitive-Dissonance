@@ -7,7 +7,6 @@ var active = bool(false)
 onready var knife = $Knife
 onready var magic = $Magic
 onready var punch = $Punch
-onready var flee = $Flee
 onready var selection_arrow = $SelectionArrow
 
 

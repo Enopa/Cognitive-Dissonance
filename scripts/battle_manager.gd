@@ -13,6 +13,10 @@ var battle_camera
 var battle_player
 var battle_enemy
 var bullet_spawners = Array()
+var bullet_spawner_up
+var bullet_spawner_down
+var bullet_spawner_left
+var bullet_spawner_right
 var battle_arena
 var death_screen
 var win_screen
@@ -26,6 +30,7 @@ func _process(delta):
 
 
 func on_player_killed():
+	battle_enemy.midi_player.stop()
 	player_killed = true
 	battle_player.dead = true
 	battle_camera.level_transition.fade_in()
@@ -35,6 +40,7 @@ func on_player_killed():
 	get_tree().change_scene(death_level_path)
 
 func on_enemy_killed():
+	battle_enemy.midi_player.stop()
 	enemy_killed = true
 	battle_enemy.dead = true
 	battle_camera.level_transition.fade_in()

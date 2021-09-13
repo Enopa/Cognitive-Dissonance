@@ -2,7 +2,7 @@ extends Node2D
 
 
 var opening_cutscene_id = String("GardenIntroCutscene")
-var door_name = String("AverysStreetDoor")
+var door_name = String("AverysTownDoor")
 var door_dialog_name = String("FrontDoorDialog")
 var door
 var door_dialog

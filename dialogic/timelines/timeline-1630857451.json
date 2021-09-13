@@ -1,0 +1,29 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1630501051.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630501051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Dont be a pussy! Come on, let's find a monster!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630857451.json",
+		"name": "FriendsCutsceneAverysHouseDoorDialog"
+	}
+}

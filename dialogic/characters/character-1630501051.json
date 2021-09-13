@@ -1,0 +1,20 @@
+{
+	"color": "#fff30303",
+	"description": "Avery's friend and love interest.",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1630501051.json",
+	"mirror_portraits": false,
+	"name": "Claire",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		}
+	],
+	"scale": 100
+}

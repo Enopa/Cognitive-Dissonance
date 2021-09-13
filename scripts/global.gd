@@ -1,5 +1,6 @@
 extends Node
 
+const target_fps = int(60)
 const save_dir = "user://saves/"
 var save_path = save_dir + "save.dat"
 var loaded_data
@@ -7,6 +8,7 @@ var load_pending = bool(false)
 
 # Nodes
 var player
+var navigation
 
 signal loaded_scene
 
@@ -17,6 +19,8 @@ func save_data():
 	var save_data_dictionary = {
 	"room_path": get_tree().current_scene.filename,
 	"player_position": player.position,
+	"player_follower_path": player.follower_path,
+	"player_follower_position": player.follower_position,
 	"completed_battle_ids": CompletionManager.completed_battle_ids,
 	"completed_cutscene_ids": CompletionManager.completed_cutscene_ids
 	}
@@ -54,6 +58,7 @@ func apply_loaded_data_to_singletons():
 
 func apply_loaded_data():
 	player.position = loaded_data.player_position
+	if loaded_data.player_follower_path != String(""): player.follow_player(loaded_data.player_follower_path, loaded_data.player_follower_position)
 	emit_signal("loaded_scene")
 
 func _process(delta):
@@ -69,7 +74,12 @@ func on_scene_loaded():
 func _input(event):
 
 	# Interacting
-	if event.is_action_pressed("QuickSave"):
-		save_data()
-	if event.is_action_pressed("QuickLoad"):
-		load_data()
+	#if event.is_action_pressed("QuickSave"):
+		#save_data()
+	#if event.is_action_pressed("QuickLoad"):
+		#load_data()
+		# Input
+
+	# Quiting
+	if event.is_action_pressed("Quit"):
+		get_tree().quit()

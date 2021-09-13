@@ -5,5 +5,6 @@ extends KinematicBody2D
 const target_fps = int(60)
 
 # Variables
-var health = int(20)
+export var health = int(5)
+export var health_max = int(5)
 var dead = bool(false)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://characters/battle_characters/enemy_base/battle_enemy_base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/battle_characters/enemies/battle_brain_monster/sprites/brain_monster.png" type="Texture" id=2]
+
+[node name="BattleCharacter" instance=ExtResource( 1 )]
+health = 10
+health_max = 10
+music_path = "res://audio/music/battle_arena/brainy/brainy.wav"
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PoolVector2Array( -16, -24, 16, -24, 16, 8, -16, 8 )
+
+[node name="MIDIPlayer" parent="." index="2"]
+file = "res://audio/music/battle_arena/brainy/brainy.mid"

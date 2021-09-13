@@ -1,0 +1,49 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1630501051.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630501051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hey Avery."
+		},
+		{
+			"action": "join",
+			"character": "character-1630501127.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630501127.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hey Ave."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630515626.json",
+		"name": "FriendsCutsceneIntroDialog"
+	}
+}

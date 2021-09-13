@@ -1,0 +1,117 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1628856576.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1628856576.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hey Claire. Hey Leo.\nSo why did you call me out this late?"
+		},
+		{
+			"action": "join",
+			"character": "character-1630501051.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630501051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "So you ever wonder why curfew started at 11pm?\nWell, it's cus these monsters roam around starting at 12am."
+		},
+		{
+			"character": "character-1628856576.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "What the fuck? You mean that... [color=#A00000][shake rate=25 level=5]thing[/shake][/color] I fought in my garden was a monster?"
+		},
+		{
+			"action": "join",
+			"character": "character-1630501127.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1630501127.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Most likely."
+		},
+		{
+			"character": "character-1628856576.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I just moved here. This is a lot to take in..."
+		},
+		{
+			"character": "character-1630501051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Don't worry Ave. We'll protect you.\nAnyway, we called you out for a reason. You know them monsters yeah?\nWell we're gonna go hunting some."
+		},
+		{
+			"character": "character-1628856576.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "What the fuck?"
+		},
+		{
+			"character": "character-1630501051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Come on, it'll be fun. Look, these monsters sometimes drop stuff when you kill them.\nSome of this stuff can be sold for lots of money."
+		},
+		{
+			"character": "character-1628856576.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Are you sure this is a good idea?"
+		},
+		{
+			"character": "character-1630501051.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Positive. Look, I'll follow you. Just run around looking for monsters.\nIm sure one will turn up.\nLeo, you stay here in case another monster shows up."
+		},
+		{
+			"character": "character-1630501127.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Got it."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1630501006.json",
+		"name": "FriendsCutsceneDialog"
+	}
+}

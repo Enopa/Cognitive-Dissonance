@@ -2,7 +2,7 @@
 
 [ext_resource path="res://environment/backgrounds/battle_arena/battle_arena_background.png" type="Texture" id=1]
 [ext_resource path="res://levels/main_menu/main_menu.gd" type="Script" id=2]
-[ext_resource path="res://fonts/DTM-Mono_Large.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fonts/prstart_large.tres" type="DynamicFont" id=3]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -20,12 +20,13 @@ __meta__ = {
 current = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = -144.0
-margin_top = -12.0
-margin_right = 144.0
-margin_bottom = 8.0
+margin_left = -136.0
+margin_top = -16.0
+margin_right = 128.0
+margin_bottom = 40.0
 custom_fonts/normal_font = ExtResource( 3 )
-text = "Press Z, ENTER OR SPACE to start"
+text = "Press Z, ENTER or SPACE to start"
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }

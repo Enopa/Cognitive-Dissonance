@@ -6,14 +6,14 @@
 	"id": "character-1628856576.json",
 	"mirror_portraits": false,
 	"name": "Avery",
-	"nickname": "",
-	"nickname_bool": false,
+	"nickname": "Ave",
+	"nickname_bool": true,
 	"offset_x": 345,
 	"offset_y": -80,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://characters/overworld_characters/player/sprites/avery_portrait.png"
+			"path": ""
 		}
 	],
 	"scale": 150
