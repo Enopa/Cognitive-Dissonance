@@ -6,7 +6,7 @@ var active = bool(false)
 
 onready var knife = $Knife
 onready var magic = $Magic
-onready var punch = $Punch
+onready var bag = $Bag
 onready var selection_arrow = $SelectionArrow
 
 
@@ -22,11 +22,11 @@ func _input(event):
 		if BattleManager.battle_player.dead == false:
 
 			# Cycling
-			if event.is_action_pressed("CycleButtonDown"):
+			if event.is_action_pressed("CycleButtonRight"):
 				if active == true:
 					selected_move = clamp(selected_move + 1, 0, 2)
 					reposition_arrow()
-			if event.is_action_pressed("CycleButtonUp"):
+			if event.is_action_pressed("CycleButtonLeft"):
 				if active == true:
 					selected_move = clamp(selected_move - 1, 0, 2)
 					reposition_arrow()
@@ -35,13 +35,13 @@ func _input(event):
 				if active == true:
 					if selected_move == 0: BattleManager.battle_player.attack_knife()
 					elif selected_move == 1: BattleManager.battle_player.attack_magic()
-					elif selected_move == 2: BattleManager.battle_player.attack_punch()
+					BattleManager.battle_camera.screenshake(1, .5, 0)
 
 
 func reposition_arrow():
-	if selected_move == 0: selection_arrow.position.y = knife.position.y
-	elif selected_move == 1: selection_arrow.position.y = magic.position.y
-	elif selected_move == 2: selection_arrow.position.y = punch.position.y
+	if selected_move == 0:selection_arrow.position.x = knife.position.x - 24
+	elif selected_move == 1: selection_arrow.position.x = magic.position.x - 24
+	elif selected_move == 2: selection_arrow.position.x = bag.position.x - 24
 
 func show_ui():
 	visible = true

@@ -15,7 +15,7 @@
 [ext_resource path="res://environment/day_night_manager/day_night_manager.tscn" type="PackedScene" id=13]
 [ext_resource path="res://levels/areas/averys_town/averys_town.gd" type="Script" id=14]
 [ext_resource path="res://characters/overworld_characters/npcs/claire/averys_town/friends_cutscene/claire_averys_town_friends_cutscene.tscn" type="PackedScene" id=15]
-[ext_resource path="res://characters/overworld_characters/npcs/leo/averys_town/leo_averys_town.tscn" type="PackedScene" id=16]
+[ext_resource path="res://characters/overworld_characters/npcs/leo/averys_town/friends_cutscene/leo_averys_town_friends_cutscene.tscn" type="PackedScene" id=16]
 [ext_resource path="res://levels/areas/averys_town/friends_cutscene/friends_cutscene_trigger.tscn" type="PackedScene" id=17]
 [ext_resource path="res://levels/areas/averys_town/averys_house_door/averys_house_door_manager.tscn" type="PackedScene" id=18]
 [ext_resource path="res://levels/areas/averys_town/enemy_spawner/brain_event_enemy_spawner.tscn" type="PackedScene" id=19]
@@ -78,7 +78,7 @@ tile_data = PoolIntArray( -2818060, 0, 11, -2818059, 0, 13, -2818058, 0, 13, -28
 night = true
 
 [node name="LevelMusicManager" parent="." instance=ExtResource( 3 )]
-music_track_path = "res://audio/music/overworld/averys_house/home.wav"
+music_track_path = "res://audio/music/overworld/averys_town_night/past_your_curfew.wav"
 
 [node name="MainHallDoor" parent="." instance=ExtResource( 5 )]
 position = Vector2( 224, 56 )

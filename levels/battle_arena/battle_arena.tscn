@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/turn_queue/turn_queue.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/battle_characters/battle_player/battle_player.tscn" type="PackedScene" id=2]
@@ -6,10 +6,12 @@
 [ext_resource path="res://levels/battle_arena/battle_character_spawner/battle_character_spawner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://environment/backgrounds/battle_arena/battle_arena_background.png" type="Texture" id=5]
 [ext_resource path="res://scenes/battle_system/battle_system_ui/battle_system_ui.tscn" type="PackedScene" id=6]
+[ext_resource path="res://levels/battle_arena/ScreenOutline.png" type="Texture" id=7]
 [ext_resource path="res://scenes/battle_system/battle_system_hud/battle_system_hud.tscn" type="PackedScene" id=8]
 [ext_resource path="res://effects/screenshake/screenshake.tscn" type="PackedScene" id=9]
 [ext_resource path="res://levels/battle_arena/battle_camera.gd" type="Script" id=10]
 [ext_resource path="res://levels/battle_arena/battle_bullet_spawner/battle_bullet_spawner.tscn" type="PackedScene" id=11]
+[ext_resource path="res://characters/battle_spectator_characters/player/battle_spectator_player.tscn" type="PackedScene" id=12]
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,7 +20,7 @@
 [node name="BattlePlayer" parent="TurnQueue" instance=ExtResource( 2 )]
 
 [node name="BattleCharacterSpawner" parent="TurnQueue" instance=ExtResource( 4 )]
-position = Vector2( 0, -64 )
+position = Vector2( 96, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -59,3 +61,10 @@ direction = "Right"
 [node name="BattleBulletSpawnerDown" parent="." instance=ExtResource( 11 )]
 position = Vector2( 0, 160 )
 direction = "Down"
+
+[node name="ScreenOutline" type="Sprite" parent="."]
+z_index = -1
+texture = ExtResource( 7 )
+
+[node name="BattleSpectatorPlayer" parent="." instance=ExtResource( 12 )]
+position = Vector2( -96, 0 )

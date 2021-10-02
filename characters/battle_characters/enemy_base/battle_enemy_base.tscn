@@ -10,5 +10,6 @@ script = ExtResource( 2 )
 [node name="MIDIPlayer" type="Node" parent="." index="2"]
 script = ExtResource( 3 )
 loop = true
+bus = "Music"
 
 [connection signal="midi_event" from="MIDIPlayer" to="." method="_on_MIDIPlayer_midi_event"]

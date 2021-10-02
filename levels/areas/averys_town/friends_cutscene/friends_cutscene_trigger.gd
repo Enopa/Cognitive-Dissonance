@@ -5,6 +5,7 @@ var dialog_id = String("FriendsCutsceneDialog")
 var player_cutscene_path = String("res://characters/overworld_characters/player/cutscene/averys_town/friends_cutscene/player_friends_cutscene.tscn")
 var cutscene_id = String("FriendsCutscene")
 var claire_name = String("Claire")
+var leo_name = String("Leo")
 
 
 func _on_Area2D_body_entered(body):
@@ -26,4 +27,6 @@ func on_loaded():
 func on_cutscene_end():
 	var claire = get_tree().get_current_scene().get_node("YSort").get_node(claire_name)
 	claire.follow_player()
+	var leo = get_tree().get_current_scene().get_node("YSort").get_node(leo_name)
+	leo.follow_player()
 	queue_free()

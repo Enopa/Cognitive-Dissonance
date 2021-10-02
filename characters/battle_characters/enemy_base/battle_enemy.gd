@@ -80,10 +80,18 @@ func set_bullet_direction(event):
 		if current_assigned_dir_index == 0:
 			direction = "Up"
 		if current_assigned_dir_index == 1:
-			direction = "Down"
+			direction = "Up"
 		if current_assigned_dir_index == 2:
-			direction = "Left"
+			direction = "Down"
 		if current_assigned_dir_index == 3:
+			direction = "Down"
+		if current_assigned_dir_index == 4:
+			direction = "Left"
+		if current_assigned_dir_index == 5:
+			direction = "Left"
+		if current_assigned_dir_index == 6:
+			direction = "Right"
+		if current_assigned_dir_index == 7:
 			direction = "Right"
 			current_assigned_dir_index = 0
 		current_assigned_dir_index += 1

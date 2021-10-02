@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/king_slime.wav-69b3c1c718908bc19cf7d435d5b23bb0.sample"
+
+[deps]
+
+source_file="res://audio/music/battle_arena/king_slime/king_slime.wav"
+dest_files=[ "res://.import/king_slime.wav-69b3c1c718908bc19cf7d435d5b23bb0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

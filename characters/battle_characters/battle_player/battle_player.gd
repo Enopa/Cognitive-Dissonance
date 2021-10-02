@@ -1,7 +1,7 @@
 extends "res://characters/battle_characters/battle_character_base.gd"
 
 
-var is_players_turn = bool(false)
+var is_players_turn = bool(true)
 var damage_to_apply = int(0)
 var spam_prevention_damage = int(1)
 var found_bullet_up = bool(false)
@@ -9,6 +9,7 @@ var found_bullet_down = bool(false)
 var found_bullet_left = bool(false)
 var found_bullet_right = bool(false)
 
+onready var animation_player = $AnimationPlayer
 onready var attack_audio_player = $AttackAudioPlayer
 onready var damage_audio_player = $DamageAudioPlayer
 onready var hurtbox_area = $HurtboxArea
@@ -27,6 +28,7 @@ onready var arrow_sprite_right = $ArrowAreaRight/Sprite
 # Func ready
 func _ready():
 	BattleManager.battle_player = self
+	visible = false
 
 
 # Input
@@ -106,12 +108,19 @@ func play_turn():
 	arrow_sprite_down.frame = 0
 	arrow_sprite_left.frame = 0
 	arrow_sprite_right.frame = 0
+	fade_out()
 	if BattleManager.battle_ui != null: BattleManager.battle_ui.show_ui()
 	
 func end_turn():
-	is_players_turn = false
-	if BattleManager.battle_ui != null: BattleManager.battle_ui.hide_ui()
-	get_parent().turn_end()
+	if BattleManager.battle_enemy.health > 0:
+		fade_in()
+		is_players_turn = false
+		if BattleManager.battle_ui != null: BattleManager.battle_ui.hide_ui()
+		get_parent().turn_end()
+	else:
+		is_players_turn = false
+		if BattleManager.battle_ui != null: BattleManager.battle_ui.hide_ui()
+		get_parent().turn_end()
 
 func attack_knife():
 	calculate_damage("knife")
@@ -133,8 +142,6 @@ func calculate_damage(attack_type):
 		damage_to_apply = 1
 	if attack_type == "magic":
 		damage_to_apply = 1
-	if attack_type == "punch":
-		damage_to_apply = 1
 
 func damage_enemy(damage):
 	BattleManager.battle_enemy.health = clamp(BattleManager.battle_enemy.health - damage, 0, BattleManager.battle_enemy.health)
@@ -147,6 +154,13 @@ func recieve_damage(damage):
 	damage_audio_player.play()
 
 func heal_damage(heal_damage):
-	print(heal_damage)
 	health = clamp(health + heal_damage, 0, health_max)
 	heal_audio_player.play()
+
+func fade_out():
+	animation_player.play("FadeOut")
+
+func fade_in():
+	animation_player.play("FadeIn")
+	visible = true
+

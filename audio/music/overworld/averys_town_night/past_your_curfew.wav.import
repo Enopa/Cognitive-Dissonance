@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/past_your_curfew.wav-1d60763d8b1fb15e4de0333fa4d000d0.sample"
+
+[deps]
+
+source_file="res://audio/music/overworld/averys_town_night/past_your_curfew.wav"
+dest_files=[ "res://.import/past_your_curfew.wav-1d60763d8b1fb15e4de0333fa4d000d0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

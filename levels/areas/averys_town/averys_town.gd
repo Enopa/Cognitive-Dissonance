@@ -8,6 +8,7 @@ var dialog_id = String("ExitHouseDialog")
 func _ready():
 	Global.connect("loaded_scene", self, "on_loaded")
 
+
 func on_loaded():
 	if CompletionManager.completed_cutscene_ids.find(opening_cutscene_id) == -1:
 		Global.player.enter_cutscene()

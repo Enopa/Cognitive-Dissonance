@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://characters/overworld_characters/npcs/NPC_Base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/overworld_characters/npcs/npc_base.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/overworld_characters/npcs/claire/sprites/claire.png" type="Texture" id=2]
 [ext_resource path="res://characters/overworld_characters/npcs/claire/averys_town/friends_cutscene/claire_averys_town_friends_cutscene.gd" type="Script" id=3]
 

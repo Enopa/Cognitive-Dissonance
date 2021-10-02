@@ -2,7 +2,7 @@
 	"events": [
 		{
 			"action": "join",
-			"character": "character-1630501051.json",
+			"character": "character-1628856576.json",
 			"event_id": "dialogic_002",
 			"mirror": false,
 			"portrait": "",
@@ -15,10 +15,10 @@
 			}
 		},
 		{
-			"character": "character-1630501051.json",
+			"character": "character-1628856576.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Dont be a pussy! Come on, let's find a monster!"
+			"text": "I should really look for a monster first."
 		}
 	],
 	"metadata": {

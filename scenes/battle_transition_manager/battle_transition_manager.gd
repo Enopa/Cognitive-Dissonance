@@ -2,8 +2,6 @@ extends Node
 
 
 var player_pos = Vector2(0, 0)
-var player_follower_path = String()
-var player_follower_pos = Vector2(0, 0)
 var overworld_scene_path = String("")
 var pending_battle_exit_repos = bool(false)
 var pending_spawn_enemy = bool(false)
@@ -16,8 +14,6 @@ signal finished_battle
 
 func enter_battle(enemy_path, battle_id):
 	player_pos = Global.player.position
-	player_follower_path = Global.player.follower_path
-	player_follower_pos = Global.player.follower_position
 	current_battle_id = battle_id
 	overworld_scene_path = get_tree().current_scene.filename
 	GlobalAudioManager.stop_track()
@@ -55,6 +51,9 @@ func _physics_process(delta):
 
 func repos_elements():
 	Global.player.position = player_pos
-	if player_follower_path != String(""): Global.player.follow_player(player_follower_path, player_follower_pos)
+	if Global.party_paths.size() > 0:
+		for item in Global.party_paths:
+			var index = Global.party_paths.find(item, 0)
+			Global.player.follow_player(item, Global.party_positions[index])
 	emit_signal("finished_battle")
 	

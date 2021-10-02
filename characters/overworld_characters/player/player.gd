@@ -11,15 +11,15 @@ var max_speed = float(75)
 var interact_array = []
 var loading_new_scene = bool(false)
 var found_interactable = false
+var party = []
+var movement_path = []
+var max_movement_path_size = int(100)
 
 # Cutscenes
 var cutscene_instance
 var talking = bool(false)
 var in_cutscene = bool(false)
 var in_movement_cutscene = bool(false)
-var follower
-var follower_path = String()
-var follower_position = Vector2()
 
 # Onready Animation
 onready var animation_player = $AnimationPlayer
@@ -32,13 +32,13 @@ onready var player_camera = $PlayerCamera
 onready var interaction_area = $InteractionArea
 onready var interaction_collision = $InteractionArea/CollisionShape2D
 
-
 # Func ready
 func _ready():
 	animation_tree.active = true
 	Global.player = self
 	animation_tree.set("parameters/Idle/blend_position", Vector2(0, 1))
 	update_interaction_collision()
+
 
 # Func Physics Process
 func _physics_process(delta):
@@ -58,10 +58,25 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta * Global.target_fps)
 		animation_state.travel("Idle")
 
-	if follower != null:
-		follower_position = follower.position
-
 	velocity = move_and_slide(velocity)
+
+	# Updates position of party members
+	if party.size() > 0:
+		for item in party:
+			var index = party.find(item, 0)
+			Global.party_positions.remove(index)
+			Global.party_positions.insert(index, item.position)
+
+	# Sets movement path
+	if movement_path.size() > 0:
+		if movement_path[0] != position:
+			movement_path.push_front(position)
+	else:
+		movement_path.push_front(position)
+		for position in movement_path:
+			var index = movement_path.find(position, 0)
+			if index > max_movement_path_size:
+				movement_path.remove(index)
 
 
 # Input
@@ -74,7 +89,6 @@ func _input(event):
 			for x in interaction_area.get_overlapping_bodies():
 				if found_interactable == false:
 					if x.is_in_group("Interactable"):
-						print("test")
 						x.on_interacted()
 						found_interactable = true
 
@@ -118,17 +132,27 @@ func exit_movement_cutscene():
 
 # Follow Player
 func follow_player(new_follower_path, new_follower_position):
-	var loaded_follower = load(new_follower_path)
-	var follower_instance = loaded_follower.instance()
-	follower_instance.position = new_follower_position
-	get_parent().add_child(follower_instance)
-	follower = follower_instance
-	follower_path = follower.get_filename()
-	follower_position = follower.position
+	if !Global.party_paths.has(new_follower_path):
+		var new_loaded_follower = load(new_follower_path)
+		var new_follower_instance = new_loaded_follower.instance()
+		get_parent().add_child(new_follower_instance)
+		party.append(new_follower_instance)
+		Global.party_paths.append(new_follower_instance.get_filename())
+		Global.party_positions.append(new_follower_position)
+		new_follower_instance.position = new_follower_position
+	else:
+		var new_loaded_follower = load(new_follower_path)
+		var new_follower_instance = new_loaded_follower.instance()
+		get_parent().add_child(new_follower_instance)
+		party.append(new_follower_instance)
+		new_follower_instance.position = new_follower_position
 
 # Stop Following Player
-func stop_following_player():
-	follower = null
+func stop_following_player(follower):
+	var index = party.find(follower, 0)
+	party.remove(index)
+	Global.party_paths.remove(index)
+	Global.party_positions.remove(index)
 
 # Can Move
 func can_move():
